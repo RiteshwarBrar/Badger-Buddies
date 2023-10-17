@@ -21,7 +21,12 @@ export default function BadgerBuds() {
     }, []);
 
     console.log(buds)
-
+    if(sessionStorage.getItem("saved")===null){
+        sessionStorage.setItem("saved", JSON.stringify([]));
+    }
+    if(sessionStorage.getItem("adopted")===null){
+        sessionStorage.setItem("adopted", JSON.stringify([]));
+    }
     return <div>
         <BadgerBudsNavbar />
         <div style={{ margin: "1rem" }}>
